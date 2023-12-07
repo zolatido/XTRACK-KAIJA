@@ -20,10 +20,15 @@ const AddForm = () => {
 
     // Define a list of product options
     const optionsProduct = [
-        { value: 'Rebisco Crackers', label: 'Rebisco Crackers' },
-        { value: 'Gardenia Loaf bread', label: 'Gardenia Loaf bread' },
-        { value: 'Lemon Square Cheese Cake', label: 'Lemon Square Cheese Cake' },
-        { value: 'Cream O Cookies', label: 'Cream O Cookies' },
+        { value: 'Gardenia Classic White Bread', label: 'Gardenia Classic White Bread' },
+        { value: 'Gardenia High Fiber Whole Wheat', label: 'Gardenia High Fiber Whole Wheat' },
+        { value: 'Gardenia High Fiber Wheat Raisin', label: 'Gardenia High Fiber Wheat Raisin' },
+        { value: 'Gardenia Amazing Black Forest Loaf', label: 'Gardenia Amazing Black Forest Loaf'},
+        { value: 'Gardenia Strawberry and Blueberry Loaf', label: 'Gardenia Strawberry and Blueberry Loaf'},
+        { value: 'Marby Pinoy Tasty', label: 'Marby Pinoy Tasty' },
+        { value: 'Marby Ube Loaf', label: 'Marby Ube Loaf' },
+        { value: 'Marby Hopia Dice', label: 'Marby Hopia Dice' },
+        { value: 'Marby Mongo Bread', label: 'Marby Mongo Bread' },
     ]
 
     // Define a list of expiration options
@@ -32,6 +37,7 @@ const AddForm = () => {
         { value: 'Bottom', label: 'Bottom' },
         { value: 'Left', label: 'Left' },
         { value: 'Right', label: 'Right' },
+        { value: 'Back', label: 'Back' },
     ]
 
     // Initialize state variables
@@ -107,8 +113,8 @@ const AddForm = () => {
                                     <DatePicker onChange={(date) => setProductExpirationDate(date)} selected={productExpirationDate} className="w-full px-6 py-3 rounded-lg" placeholderText="Select a date" />
                                     {error && <div className="text-center text-red-500">{error}</div>}
                                     <div className="flex flex-row self-center gap-5">
-                                        <button className="px-10 py-2 bg-green-500 rounded font-bold text-xl hover:bg-green-600" onClick={() => setShowModal(false)} >Close</button>
-                                        <button className="px-10 py-2 bg-red-500 rounded font-bold text-xl hover:bg-red-600" type="submit">Add</button>
+                                        <button className="px-10 py-2 bg-red-500 rounded font-bold text-xl hover:bg-red-600" onClick={() => setShowModal(false)} >Close</button>
+                                        <button className="px-10 py-2 bg-green-500 rounded font-bold text-xl hover:bg-green-600" type="submit">Add</button>
                                     </div>
                                 </div>
                             </form>
