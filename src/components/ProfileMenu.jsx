@@ -50,7 +50,7 @@ const ProfileMenu = () => {
         await logoutUser();
 
         // Navigate to the home page or any other desired route after logout
-        navigate('/x-track-web/');
+        navigate('/XTRACK-KAIJA/');
     }
 
     const toggleDropdown = () => {
@@ -86,10 +86,10 @@ const ProfileMenu = () => {
             {isOpen && (
                 <div ref={dropdownRef} className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
                     <div className="py-1 px-2" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                        <Link className="hover:text-[#1F487E]/[.80] block px-4 py-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-100" to='/x-track-web/home'>Home</Link>
-                        <Link className="hover:text-[#1F487E]/[.80] block px-4 py-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-100" to='/x-track-web/chart'>Chart</Link>
-                        <Link className="hover:text-[#1F487E]/[.80] block px-4 py-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-100" to='/x-track-web/about'>About</Link>
-                        <Link className="hover:text-[#1F487E]/[.80] block px-4 py-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-100" to='/x-track-web/feature'>Feature</Link>
+                        <Link className="hover:text-[#1F487E]/[.80] block px-4 py-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-100" to='/XTRACK-KAIJA/home'>Home</Link>
+                        <Link className="hover:text-[#1F487E]/[.80] block px-4 py-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-100" to='/XTRACK-KAIJA/chart'>Chart</Link>
+                        <Link className="hover:text-[#1F487E]/[.80] block px-4 py-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-100" to='/XTRACK-KAIJA/about'>About</Link>
+                        <Link className="hover:text-[#1F487E]/[.80] block px-4 py-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-100" to='/XTRACK-KAIJA/feature'>Feature</Link>
                         <div className="border-t-[1px] w-auto border-black/20" />
                         <button className="block px-4 py-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-100 w-full text-left" onClick={handleSubmitLogout} > Logout</button>
                     </div>
