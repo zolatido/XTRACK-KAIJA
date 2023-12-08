@@ -20,14 +20,14 @@ function App() {
       <NavBar />
       <Routes>
         {/* Define routes for your application */}
-        <Route path='/XTRACK_KAIJA/' element={<Welcome />} />
-        <Route path='/XTRACK_KAIJA/login' element={<Login />} />
-        <Route path='/XTRACK_KAIJA/register' element={<Register />} />
-        <Route path='/XTRACK_KAIJA/home' element={<Home />} />
-        <Route path='/XTRACK_KAIJA/about' element={<About />} />
-        <Route path='/XTRACK_KAIJA/feature' element={<Feature />} />
-        <Route path='/XTRACK_KAIJA/profile' element={<Profile />} />
-        <Route path='/XTRACK_KAIJA/chart' element={<Charts />} />
+        <Route path='/XTRACK-KAIJA/' element={<Welcome />} />
+        <Route path='/XTRACK-KAIJA/login' element={<Login />} />
+        <Route path='/XTRACK-KAIJA/register' element={<Register />} />
+        <Route path='/XTRACK-KAIJA/home' element={<Home />} />
+        <Route path='/XTRACK-KAIJA/about' element={<About />} />
+        <Route path='/XTRACK-KAIJA/feature' element={<Feature />} />
+        <Route path='/XTRACK-KAIJA/profile' element={<Profile />} />
+        <Route path='/XTRACK-KAIJA/chart' element={<Charts />} />
       </Routes>
     </div>
   )
