@@ -101,94 +101,55 @@ const Charts = () => {
         quantity: product.productQuantity,
     }));
 
-    const CustomizedCross = (props) => {
-        const { width, height, stroke, fill, formattedGraphicalItems } = props;
-        console.log(props);
-        // get first series in chart
-        const firstSeries = formattedGraphicalItems[0];
-        // get any point at any index in chart
-        const secondPoint = firstSeries?.props?.points[1];
-
-        // render custom content using points from the graph
-        return (
-            <Cross
-                y={secondPoint?.y}
-                x={secondPoint?.x}
-                top={-50}
-                left={70}
-                height={height}
-                width={width}
-                stroke={stroke ?? '#000'}
-                fill={fill ?? 'none'}
-
-            />
-        );
-    };
-
     return (
-        <div className="h-max lg:h-[calc(100vh-4.75rem)] w-full flex flex-col lg:flex-row bg-gradient-to-b from-white via-white to-blue-500 px-5 lg:px-20">
-            <div className="w-full lg:w-1/2 h-full lg:h-auto md:py-5">
-                <div className="h-1/2">
-                    <ResponsiveContainer width="100%" height="100%">
-                        <LineChart
-                            data={productStatusData}
-                            margin={{ bottom: 30, }}>
-                            <CartesianGrid strokeDasharray="3 3" />
-                            <XAxis dataKey="name" />
-                            <YAxis />
-                            <Tooltip />
-                            <Legend />
-                            <Line type="monotone" dataKey="fresh" stroke="#22c55e" />
-                            <Line type="monotone" dataKey="expiringSoon" stroke="#FFA500" />
-                            <Line type="monotone" dataKey="expired" stroke="#ef4444" />
-                            <Customized component={CustomizedCross} />
-                        </LineChart>
-                    </ResponsiveContainer>
+        <div className="h-full lg:h-[calc(100vh-4.75rem)] w-full flex flex-col lg:flex-row bg-gradient-to-b from-white via-white to-blue-500 px-5 lg:px-20 gap-5">
+            <div className="w-full lg:w-1/3 h-full lg:h-auto md:py-10 py-5">
+                <div className="flex flex-col border-2 rounded-xl h-full border-gray-900 bg-gray-100/50">
+                    <div className="flex flex-row bg-[#1F487E]/[.20] h-10 items-center justify-between px-12 rounded-t-xl pr-20">
+                        <span className="font-bold">Name</span>
+                        <span className="font-bold">Quantity</span>
+                    </div>
 
-                </div>
-
-                <div className="h-1/2">
-                    <ResponsiveContainer width="100%" height="100%">
-                        <AreaChart
-                            data={productStatusData}
-                            margin={{ bottom: 30, }}>
-                            <CartesianGrid strokeDasharray="10 10" />
-                            <XAxis dataKey="name" />
-                            <YAxis />
-                            <Tooltip />
-                            <Legend />
-                            <Area type="monotone" dataKey="fresh" stackId="1" stroke="#22c55e" fill="#22c55e" />
-                            <Area type="monotone" dataKey="expiringSoon" stackId="1" stroke="#FFA500" fill="#FFA500" />
-                            <Area type="monotone" dataKey="expired" stackId="1" stroke="#ef4444" fill="#ef4444" />
-                        </AreaChart>
-                    </ResponsiveContainer>
+                    <div className="overflow-y-auto my-5">
+                        {productStatusData.map((product, index) => (
+                            <div key={index} className=" bg-gray-200 border-[1.5px] border-black/60 rounded-md flex flex-row pr-20 h-10 items-center justify-between px-5 mx-5 mt-2">
+                                <span className="text-center truncate">{product.name}</span>
+                                <span className="text-center truncate">{product.quantity}</span>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
-            <div className="w-full lg:w-1/2 h-full lg:h-auto md:py-5">
-                <div className="h-1/2">
+            <div className="w-full lg:w-2/3 h-full lg:h-auto md:py-10">
+                <div className="h-1/2 border-[1.5px] border-black/60 pb-10 mb-2 bg-gray-200 rounded-t-xl">
+                    <div className="flex flex-row gap-2 px-10 pb-2 bg-[#1F487E]/[.20]">
+                        <div className="font-medium">Product Quantity</div>
+                    </div>
                     <ResponsiveContainer width="100%" height="100%">
                         <BarChart
-                            data={productStatusData}
-                            margin={{ bottom: 30, }}>
+                            data={productStatusData}>
                             <CartesianGrid strokeDasharray="10 10" />
                             <XAxis dataKey="name" />
                             <YAxis />
                             <Tooltip />
-                            <Legend />
                             <Bar dataKey="quantity" fill="#3b82f6" />
                         </BarChart>
                     </ResponsiveContainer>
                 </div>
-                <div className="h-1/2">
+                <div className="h-1/2 border-[1.5px] border-black/60 pb-10 mb-2 bg-gray-200 rounded-t-xl">
+                    <div className="flex flex-row gap-2 px-10 pb-2 bg-[#1F487E]/[.20]">
+                        <div className="font-medium">Product Overview</div>
+                        <div className="flex flex-row items-center gap-2"><div className="h-4 w-4 rounded-full bg-[#ef4444]" />Expired</div>
+                        <div className="flex flex-row items-center gap-2"><div className="h-4 w-4 rounded-full bg-[#FFA500]" />Expiring Soon</div>
+                        <div className="flex flex-row items-center gap-2"><div className="h-4 w-4 rounded-full bg-[#22c55e]" />Fresh</div>
+                    </div>
                     <ResponsiveContainer width="100%" height="100%">
                         <BarChart
-                            data={productStatusData}
-                            margin={{ bottom: 30, }}>
+                            data={productStatusData}>
                             <CartesianGrid strokeDasharray="10 10" />
                             <XAxis dataKey="name" />
                             <YAxis />
                             <Tooltip />
-                            <Legend />
                             <Bar dataKey="expired" stackId="a" fill="#ef4444" name="Expired" />
                             <Bar dataKey="expiringSoon" stackId="a" fill="#FFA500" name="Expiring Soon" />
                             <Bar dataKey="fresh" stackId="a" fill="#22c55e" name="Fresh" />
