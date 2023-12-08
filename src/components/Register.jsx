@@ -35,7 +35,7 @@ const Register = () => {
             const user = await registerUser(email, password);
 
             // If registration is successful, navigate to the '/login' route and display an alert
-            navigate('/x-track-web/login');
+            navigate('/XTRACK-KAIJA/login');
             alert('User registered!');
         } catch (error) {
             // Handle registration errors, typically due to an already registered email
@@ -55,7 +55,7 @@ const Register = () => {
                     <input className="w-80 p-3 rounded-lg" type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
                     <input className="w-80 p-3 rounded-lg" type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
                     <button className="w-80 p-3 rounded-lg bg-[#1F487E] hover:bg-[#1F487E]/[.50] font-bold uppercase" type="submit">Register</button>
-                    <span>Already have an account? <Link to='/x-track-web/login' className="font-bold">Login here</Link></span>
+                    <span>Already have an account? <Link to='/XTRACK-KAIJA/login' className="font-bold">Login here</Link></span>
                     {error && <div className=" text-red-500">{error}</div>}
                 </div>
             </div>
